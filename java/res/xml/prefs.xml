@@ -87,28 +87,6 @@
             android:defaultValue="@string/voice_mode_main"
             />
 
-    <PreferenceCategory
-        android:title="@string/volume_cursor_category"
-        android:key="volume_cursor_settings">
-
-    <CheckBoxPreference
-            android:key="volume_cursor"
-            android:title="@string/prefs_volume_cursor"
-            android:summary="@string/prefs_volume_cursor_summary"
-            android:persistent="true"
-            android:defaultValue="false"
-            />
-
-    <CheckBoxPreference
-            android:key="volume_cursor_reverse"
-            android:title="@string/prefs_volume_cursor_reverse"
-            android:summaryOff="@string/prefs_volume_cursor_reverse_summary_off"
-            android:summaryOn="@string/prefs_volume_cursor_reverse_summary_on"
-            android:dependency="volume_cursor"
-            android:persistent="true"
-            android:defaultValue="false" />
-    </PreferenceCategory>
-
     <PreferenceScreen
             android:title="@string/language_selection_title"
             android:summary="@string/language_selection_summary">
@@ -145,5 +123,16 @@
             android:dependency="show_suggestions"
             />
     </PreferenceCategory>            
+    <PreferenceCategory
+            android:key="volume_cursor_settings"
+            android:title="@string/volume_cursor_category">
 
+    <ListPreference
+            android:key="volume_key_cursor"
+            android:title="@string/prefs_volume_cursor_title"
+            android:persistent="true"
+            android:entryValues="@array/volume_cursor_values"
+            android:entries="@array/volume_cursor_entries"
+            android:defaultValue="@string/volume_cursor_off" />
+    </PreferenceCategory>
 </PreferenceScreen>
